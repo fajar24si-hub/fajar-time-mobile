@@ -12,6 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fajartime"
         tools:targetApi="31">
+
+        <!-- SplashScreen sebagai Launcher -->
+        <activity
+            android:name=".SplashScreenActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".AuthActivity"
+            android:exported="false" />
+
         <activity
             android:name=".Pertemuan_5.FifthActivity"
             android:exported="false" />
@@ -29,13 +44,7 @@
             android:exported="false" />
         <activity
             android:name=".Pertemuan_3.LoginActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".Pertemuan_2.PerhitunganActivity"
             android:exported="true"
