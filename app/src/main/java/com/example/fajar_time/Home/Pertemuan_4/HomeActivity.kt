@@ -1,4 +1,4 @@
-package com.example.fajar_time.Pertemuan_4
+package com.example.fajar_time.Home.Pertemuan_4
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,10 +6,11 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.fajar_time.Pertemuan_5.FifthActivity
-import com.example.fajar_time.Pertemuan_3.LoginActivity
+import com.example.fajar_time.Home.Pertemuan_5.FifthActivity
+import com.example.fajar_time.Home.Pertemuan_3.LoginActivity
 import com.example.fajar_time.R
 import com.google.android.material.snackbar.Snackbar
 
@@ -20,7 +21,7 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
         
         // Menggunakan main_layout dari activity_home.xml
-        val rootView = findViewById<androidx.coordinatorlayout.widget.CoordinatorLayout>(R.id.main_layout)
+        val rootView = findViewById<CoordinatorLayout>(R.id.main_layout)
         ViewCompat.setOnApplyWindowInsetsListener(rootView) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)

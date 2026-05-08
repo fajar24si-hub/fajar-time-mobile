@@ -1,4 +1,4 @@
-package com.example.fajar_time.Pertemuan_2
+package com.example.fajar_time.Home.Pertemuan_2
 
 /**
  * Class Perhitungan untuk menampung rumus-rumus

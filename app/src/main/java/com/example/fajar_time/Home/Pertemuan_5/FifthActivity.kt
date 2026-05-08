@@ -1,4 +1,4 @@
-package com.example.fajar_time.Pertemuan_5
+package com.example.fajar_time.Home.Pertemuan_5
 
 import android.content.Intent
 import android.os.Bundle

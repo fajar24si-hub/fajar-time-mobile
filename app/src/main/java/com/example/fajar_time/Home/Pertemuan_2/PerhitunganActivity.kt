@@ -1,8 +1,9 @@
-package com.example.fajar_time.Pertemuan_2
+package com.example.fajar_time.Home.Pertemuan_2
 
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
+import android.view.View
 import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -129,7 +130,7 @@ class PerhitunganActivity : AppCompatActivity() {
 
         input1Layout.hint = "Panjang (cm)"
         input2Layout.hint = "Lebar (cm)"
-        input3Layout.visibility = android.view.View.GONE
+        input3Layout.visibility = View.GONE
 
         // Update satuan
         tvSatuan.text = "cm²"
@@ -144,7 +145,7 @@ class PerhitunganActivity : AppCompatActivity() {
         input1Layout.hint = "Panjang (cm)"
         input2Layout.hint = "Lebar (cm)"
         input3Layout.hint = "Tinggi (cm)"
-        input3Layout.visibility = android.view.View.VISIBLE
+        input3Layout.visibility = View.VISIBLE
 
         // Update satuan
         tvSatuan.text = "cm³"

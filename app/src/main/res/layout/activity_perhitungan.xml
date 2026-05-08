@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FAFAFA"
-    tools:context=".Pertemuan_2.PerhitunganActivity">
+    tools:context=".Home.Pertemuan_2.PerhitunganActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"

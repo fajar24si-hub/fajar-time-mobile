@@ -12,41 +12,44 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fajartime"
         tools:targetApi="31">
-
-        <!-- SplashScreen sebagai Launcher -->
+        <activity
+            android:name=".BaseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Home.Pertemuan_7.SeventhActivity"
+            android:exported="false" /> <!-- SplashScreen sebagai Launcher -->
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".AuthActivity"
             android:exported="false" />
-
         <activity
-            android:name=".Pertemuan_5.FifthActivity"
+            android:name=".Home.Pertemuan_5.FifthActivity"
             android:exported="false" />
         <activity
             android:name=".Pertemuan_5.fifth"
             android:exported="false" />
         <activity
-            android:name=".Pertemuan_4.HomeActivity"
+            android:name=".Home.Pertemuan_4.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".Pertemuan_4.DetailActivity"
+            android:name=".Home.Pertemuan_4.DetailActivity"
             android:exported="false" />
         <activity
-            android:name=".Pertemuan_3.SelamatDatangActivity"
+            android:name=".Home.Pertemuan_3.SelamatDatangActivity"
             android:exported="false" />
         <activity
-            android:name=".Pertemuan_3.LoginActivity"
+            android:name=".Home.Pertemuan_3.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".Pertemuan_2.PerhitunganActivity"
+            android:name=".Home.Pertemuan_2.PerhitunganActivity"
             android:exported="true"
             android:label="Kalkulator Persegi Panjang &amp; Balok" />
         <activity
