@@ -49,8 +49,9 @@ class SplashScreenActivity : AppCompatActivity() {
             delay(3000)
             
             // Tentukan target Activity berdasarkan status login
+            // Diarahkan ke BaseActivity sesuai instruksi SS
             val targetActivity = if (isLogin) {
-                MainActivity::class.java
+                BaseActivity::class.java
             } else {
                 AuthActivity::class.java
             }

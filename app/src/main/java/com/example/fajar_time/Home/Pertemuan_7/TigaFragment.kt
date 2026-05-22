@@ -1,4 +1,4 @@
-package com.example.myapplication.pertemuan_7
+package com.example.fajar_time.Home.Pertemuan_7
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,13 +8,11 @@ import androidx.fragment.app.Fragment
 import com.example.fajar_time.R
 
 class TigaFragment : Fragment() {
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         return inflater.inflate(R.layout.fragment_tiga, container, false)
     }
 }

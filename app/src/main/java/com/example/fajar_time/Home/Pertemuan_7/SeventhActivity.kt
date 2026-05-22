@@ -3,13 +3,10 @@ package com.example.fajar_time.Home.Pertemuan_7
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.fajar_time.R
+import androidx.fragment.app.Fragment
 import com.example.fajar_time.databinding.ActivitySeventhBinding
-
-
 
 class SeventhActivity : AppCompatActivity() {
 
@@ -27,20 +24,39 @@ class SeventhActivity : AppCompatActivity() {
             insets
         }
 
-        // Mengaktifkan toolbar
+        // Setup Toolbar
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
-            title = "Web Merdeka"
+            title = "Pertemuan 7"
             setDisplayHomeAsUpEnabled(true)
-            setDisplayShowHomeEnabled(true)
         }
 
+        // Menampilkan fragment pertama secara default
+        replaceFragment(SatuFragment())
+
+        // Setup event click untuk mengganti fragment
+        binding.btnFragment1.setOnClickListener {
+            replaceFragment(SatuFragment())
+        }
+
+        binding.btnFragment2.setOnClickListener {
+            replaceFragment(DuaFragment())
+        }
+
+        binding.btnFragment3.setOnClickListener {
+            replaceFragment(TigaFragment())
+        }
     }
 
-    // Mengaktifkan tombol back pada toolbar
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(binding.fragmentContainer.id, fragment)
+            .addToBackStack(null)
+            .commit()
+    }
+
     override fun onSupportNavigateUp(): Boolean {
         onBackPressedDispatcher.onBackPressed()
         return true
     }
-
 }
