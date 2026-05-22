@@ -9,18 +9,27 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.fajar_time.databinding.ActivityBaseBinding
 
 class BaseActivity : AppCompatActivity() {
+    // Declare binding as a class property (private)
+    private lateinit var binding: ActivityBaseBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
-        private lateinit var binding : ActivityBaseBinding
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_base)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+
+        // Initialize view binding (inflate layout)
+        binding = ActivityBaseBinding.inflate(layoutInflater)
+        setContentView(binding.root)   // Use the root view from binding
+
+        // Edge‑to‑edge handling (now uses binding.root)
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0)
             insets
         }
-        binding.bottomNavView.setOnItemSelectedListener {
-            when (it.itemId) {
+
+        // Bottom navigation listener
+        binding.bottomNavView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
                 R.id.home -> {
                     Toast.makeText(this, "Home Clicked", Toast.LENGTH_SHORT).show()
                     true
@@ -33,10 +42,8 @@ class BaseActivity : AppCompatActivity() {
                     Toast.makeText(this, "More Clicked", Toast.LENGTH_SHORT).show()
                     true
                 }
-                else -> false // return false jika item tidak ada yang di klik
+                else -> false
             }
         }
-
-
     }
 }

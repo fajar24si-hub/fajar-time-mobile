@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Fajartime"
         tools:targetApi="31">
         <activity
+            android:name=".Home.Pertemuan_9.NinthActivity"
+            android:exported="true" />
+        <activity
             android:name=".BaseActivity"
             android:exported="false" />
         <activity
@@ -34,9 +37,6 @@
             android:name=".Home.Pertemuan_5.FifthActivity"
             android:exported="false" />
         <activity
-            android:name=".Pertemuan_5.fifth"
-            android:exported="false" />
-        <activity
             android:name=".Home.Pertemuan_4.HomeActivity"
             android:exported="false" />
         <activity
@@ -50,7 +50,7 @@
             android:exported="false" />
         <activity
             android:name=".Home.Pertemuan_2.PerhitunganActivity"
-            android:exported="true"
+            android:exported="false"
             android:label="Kalkulator Persegi Panjang &amp; Balok" />
         <activity
             android:name=".MainActivity"

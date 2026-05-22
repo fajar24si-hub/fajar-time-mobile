@@ -7,7 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.fajar_time.Home.Pertemuan_4.HomeActivity
+import com.example.fajar_time.Home.Pertemuan_9.NinthActivity
 import com.example.fajar_time.R
 
 class LoginActivity : AppCompatActivity() {
@@ -23,8 +23,8 @@ class LoginActivity : AppCompatActivity() {
 
         val btnLogin = findViewById<Button>(R.id.btnLogin)
         btnLogin.setOnClickListener {
-            // Berpindah ke HomeActivity setelah login
-            val intent = Intent(this, HomeActivity::class.java)
+            // Berpindah ke NinthActivity (Pertemuan 9) setelah login
+            val intent = Intent(this, NinthActivity::class.java)
             startActivity(intent)
             finish() // Agar tidak bisa kembali ke layar login dengan tombol back
         }
