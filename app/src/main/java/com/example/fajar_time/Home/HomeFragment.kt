@@ -10,6 +10,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.fajar_time.AuthActivity
+import com.example.fajar_time.Home.Pertemuan_10.TenthActivity
 import com.example.fajar_time.Home.Pertemuan_2.PerhitunganActivity
 import com.example.fajar_time.Home.Pertemuan_3.LoginActivity
 import com.example.fajar_time.Home.Pertemuan_4.HomeActivity
@@ -59,6 +60,10 @@ class HomeFragment : Fragment() {
 
         binding.btnToNinth.setOnClickListener {
             startActivity(Intent(requireContext(), NinthActivity::class.java))
+        }
+
+        binding.btnPertemuan10.setOnClickListener {
+            startActivity(Intent(requireContext(), TenthActivity::class.java))
         }
 
         binding.btnLogout.setOnClickListener {

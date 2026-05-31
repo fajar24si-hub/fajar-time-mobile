@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Fajartime"
         tools:targetApi="31">
         <activity
+            android:name=".Home.Pertemuan_10.TenthActivity"
+            android:exported="false" />
+        <activity
             android:name=".Home.Pertemuan_9.NinthActivity"
             android:exported="true" />
         <activity
@@ -58,5 +61,5 @@
             android:label="@string/app_name"
             android:theme="@style/Theme.Fajartime" />
     </application>
-
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

@@ -1,4 +1,4 @@
-package com.example.fajar_time.Masssage
+package com.example.fajar_time.Masage
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,11 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.fajar_time.Masage.MessageAdapter
-import com.example.fajar_time.Masage.MessageModel
 import com.example.fajar_time.databinding.FragmentMessageBinding
 
-class MessageFragment : Fragment() {
+/**
+ * Catatan: File ini memiliki nama yang mirip dengan MessageFragment.kt.
+ * Disarankan untuk menghapus salah satu jika memang redundan.
+ */
+class MassageFragment : Fragment() {
     private var _binding: FragmentMessageBinding? = null
     private val binding get() = _binding!!
 
@@ -43,7 +45,7 @@ class MessageFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         (requireActivity() as AppCompatActivity).supportActionBar?.apply {
-            title = "Daftar Bahasa"
+            title = "Daftar Pesan"
             setDisplayHomeAsUpEnabled(true)
         }
 
@@ -51,11 +53,8 @@ class MessageFragment : Fragment() {
         binding.listMessageItems.adapter = adapter
     }
 
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
-
-
 }

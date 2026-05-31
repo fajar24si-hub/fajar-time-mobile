@@ -7,7 +7,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.example.fajar_time.Home.HomeFragment
-import com.example.fajar_time.Masssage.MessageFragment
+import com.example.fajar_time.Masage.MessageFragment
 import com.example.fajar_time.More.MoreFragment
 import com.example.fajar_time.databinding.ActivityBaseBinding
 
