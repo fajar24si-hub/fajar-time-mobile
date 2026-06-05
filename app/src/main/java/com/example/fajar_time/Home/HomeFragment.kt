@@ -6,10 +6,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fajar_time.AuthActivity
 import com.example.fajar_time.Home.Pertemuan_10.TenthActivity
 import com.example.fajar_time.Home.Pertemuan_2.PerhitunganActivity
@@ -18,7 +20,9 @@ import com.example.fajar_time.Home.Pertemuan_4.HomeActivity
 import com.example.fajar_time.Home.Pertemuan_5.FifthActivity
 import com.example.fajar_time.Home.Pertemuan_7.SeventhActivity
 import com.example.fajar_time.Home.Pertemuan_9.NinthActivity
+import com.example.fajar_time.Home.photo.PhotoAdapter
 import com.example.fajar_time.data.api.CatFactApiClient
+import com.example.fajar_time.data.api.PhotoApiClient
 import com.example.fajar_time.databinding.FragmentHomeBinding
 import kotlinx.coroutines.launch
 
@@ -74,9 +78,10 @@ class HomeFragment : Fragment() {
                 .setTitle("Logout")
                 .setMessage("Apakah Anda yakin ingin logout?")
                 .setPositiveButton("Ya") { _, _ ->
-                    val sharedPref = requireActivity().getSharedPreferences("user_pref", Context.MODE_PRIVATE)
+                    val sharedPref =
+                        requireActivity().getSharedPreferences("user_pref", Context.MODE_PRIVATE)
                     sharedPref.edit().clear().apply()
-                    
+
                     startActivity(Intent(requireContext(), AuthActivity::class.java))
                     requireActivity().finish()
                 }
@@ -85,6 +90,9 @@ class HomeFragment : Fragment() {
         }
         binding.btnRefresh.setOnClickListener {
             loadCatFact()
+        }
+        binding.btnRefresh.setOnClickListener {
+            loadPhoto()
         }
     }
 
@@ -100,6 +108,28 @@ class HomeFragment : Fragment() {
                 binding.tvCatFact.text = "\"${response.fact}\""
             } catch (e: Exception) {
                 binding.tvCatFact.text = "Gagal mengambil fakta kucing."
+            }
+        }
+    }
+
+    private fun loadPhoto() {
+        lifecycleScope.launch {
+            try {
+                val photos = PhotoApiClient.apiService.getPhotos()
+                val adapter = PhotoAdapter(photos)
+                binding.rvGallery.adapter = adapter
+
+                /** List Tampil Vertical*/
+                binding.rvGallery.layoutManager = LinearLayoutManager(requireContext())
+
+                /** List Tampil Horizontal */
+                //binding.rvGallery.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+
+                /** List Tampil Grid */
+                //binding.rvGallery.layoutManager = GridLayoutManager(requireContext(),2)
+
+            } catch (e: Exception) {
+                Toast.makeText(requireContext(), "Gagal memuat gambar", Toast.LENGTH_SHORT).show()
             }
         }
     }
