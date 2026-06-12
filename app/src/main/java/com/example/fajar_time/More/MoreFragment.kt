@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.fajar_time.databinding.FragmentMoreBinding
 
-class MoreFragment : Fragment() {
+class   MoreFragment : Fragment() {
 
     private var _binding: FragmentMoreBinding? = null
     private val binding get() = _binding!!

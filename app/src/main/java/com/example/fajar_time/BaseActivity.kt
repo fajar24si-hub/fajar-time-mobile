@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import com.example.fajar_time.Home.HomeFragment
 import com.example.fajar_time.Masage.MessageFragment
 import com.example.fajar_time.More.MoreFragment
+import com.example.fajar_time.Note.NoteFragment
 import com.example.fajar_time.databinding.ActivityBaseBinding
 
 class BaseActivity : AppCompatActivity() {
@@ -41,6 +42,10 @@ class BaseActivity : AppCompatActivity() {
                 }
                 R.id.message -> {
                     replaceFragment(MessageFragment())
+                    true
+                }
+                R.id.fabAddNote -> {
+                    replaceFragment(NoteFragment())
                     true
                 }
                 R.id.more -> {
