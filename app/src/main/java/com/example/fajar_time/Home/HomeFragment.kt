@@ -14,6 +14,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fajar_time.AuthActivity
 import com.example.fajar_time.Home.Pertemuan_10.TenthActivity
+import com.example.fajar_time.Home.Pertemuan_13.ThirteenthActivity
 import com.example.fajar_time.Home.Pertemuan_2.PerhitunganActivity
 import com.example.fajar_time.Home.Pertemuan_3.LoginActivity
 import com.example.fajar_time.Home.Pertemuan_4.HomeActivity
@@ -72,6 +73,11 @@ class HomeFragment : Fragment() {
         binding.btnPertemuan10.setOnClickListener {
             startActivity(Intent(requireContext(), TenthActivity::class.java))
         }
+
+        binding.btnPertemuan13.setOnClickListener {
+            startActivity(Intent(requireContext(), ThirteenthActivity::class.java))
+        }
+
 
         binding.btnLogout.setOnClickListener {
             AlertDialog.Builder(requireContext())
